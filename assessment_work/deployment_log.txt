@@ -2,3 +2,5 @@
 - Initialized AWS SSO authentication.
 - Fixed naming collision in DataPlatform.yml (AirflowBucket -> AirflowBucketResource).
 - Triggered CloudFormation stack deployment in us-east-1.
+
+2026-02-07: Successfully initiated elizaveta-data-v3 stack using dynamic resource naming to avoid global S3 collisions.
