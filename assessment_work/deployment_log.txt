@@ -1,0 +1,4 @@
+2025-12-14:
+- Initialized AWS SSO authentication.
+- Fixed naming collision in DataPlatform.yml (AirflowBucket -> AirflowBucketResource).
+- Triggered CloudFormation stack deployment in us-east-1.

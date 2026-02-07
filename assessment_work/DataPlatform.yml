@@ -198,7 +198,7 @@ Resources:
         IgnorePublicAcls: true
         RestrictPublicBuckets: true
 
-  AirflowBucket:
+  AirflowBucketResource:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Sub '${ProjectName}-airflow-${AWS::AccountId}'
