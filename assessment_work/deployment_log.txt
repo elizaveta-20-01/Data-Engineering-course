@@ -15,3 +15,7 @@ Pipeline Refactoring: Deployed two separate AWS Glue Jobs to align with business
 process_sales_customers: Automated daily ingestion for Sales and Customers (Bronze to Silver).
 process_user_profiles: Manual ingestion for JSONLine user profile data.
 Silver Layer Transformation: Successfully implemented Data Cleansing and Wrangling in PySpark. Applied schema enforcement, renamed columns to standard naming conventions (client_id, product_name, etc.), and enabled partitioning for the Sales dataset.
+Gold Layer Enrichment (Pipeline #4): Developed and executed an SQL-based enrichment pipeline in Amazon Athena. Created the gold_user_profiles_enriched table by joining Customers and User Profiles.
+Implemented COALESCE and NULLIF logic to handle missing names and geographic data.
+Applied split_part for string parsing and calculated user age dynamically.Final Analytics: Successfully executed the analytical query to identify the top state for TV sales among customers aged 20-30 for the first decade of September.
+Project Wrap-up: All scripts (Glue/PySpark and Athena/SQL) are finalized and prepared for GitHub version control. Medallion architecture (Bronze-Silver-Gold) fully operational.
