@@ -1,0 +1,21 @@
+2025-12-14:
+- Initialized AWS SSO authentication.
+- Fixed naming collision in DataPlatform.yml (AirflowBucket -> AirflowBucketResource).
+- Triggered CloudFormation stack deployment in us-east-1.
+
+2026-02-07: Successfully initiated elizaveta-data-v3 stack using dynamic resource naming to avoid global S3 collisions.
+Successfully synced partitioned sales data to s3://elizaveta1770492100-data-lake-224193575158/raw/sales/
+Successfully uploaded airflow_glue_etl.py to MWAA dags folder.
+Data Lake Raw layer populated: sales, customers, user_profiles. Crawler triggered. Ready for Silver transformations.
+End of Day 1. All CloudFormation stacks deleted to save budget. Raw data remains in S3. Infrastructure verified and ready for re-deployment tomorrow.
+
+
+2026-02-08:
+Pipeline Refactoring: Deployed two separate AWS Glue Jobs to align with business requirements:
+process_sales_customers: Automated daily ingestion for Sales and Customers (Bronze to Silver).
+process_user_profiles: Manual ingestion for JSONLine user profile data.
+Silver Layer Transformation: Successfully implemented Data Cleansing and Wrangling in PySpark. Applied schema enforcement, renamed columns to standard naming conventions (client_id, product_name, etc.), and enabled partitioning for the Sales dataset.
+Gold Layer Enrichment (Pipeline #4): Developed and executed an SQL-based enrichment pipeline in Amazon Athena. Created the gold_user_profiles_enriched table by joining Customers and User Profiles.
+Implemented COALESCE and NULLIF logic to handle missing names and geographic data.
+Applied split_part for string parsing and calculated user age dynamically.Final Analytics: Successfully executed the analytical query to identify the top state for TV sales among customers aged 20-30 for the first decade of September.
+Project Wrap-up: All scripts (Glue/PySpark and Athena/SQL) are finalized and prepared for GitHub version control. Medallion architecture (Bronze-Silver-Gold) fully operational.
